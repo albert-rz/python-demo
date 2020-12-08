@@ -1,0 +1,44 @@
+openapi: 3.0.1
+info:
+  title: Pydemo
+  description: Demo
+  version: 1.0.0
+servers:
+- url: http://localhost:5000
+paths:
+  /:
+    get:
+      summary: Hello world
+      description: Return a "hello world" like message.
+      responses:
+        200:
+          description: Successful operation
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Hello, World!"
+        400:
+          description: Invalid status value
+          content: {}
+  /hello:
+    get:
+      summary: Hello person
+      description: Return a hello message that includes a name.
+      parameters:
+        - name: name
+          in: query
+          required: True
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful oepration
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Hello Max"
+        400:
+          description: Invalid status value
+          content: {}

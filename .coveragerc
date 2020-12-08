@@ -1,0 +1,4 @@
+[report]
+omit = 
+    pydemo/webapp.py
+    *__init__.py
